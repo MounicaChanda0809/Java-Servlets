@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Register Page</title>
+</head>
+<body>
+
+	<h2 align="center">Register Product</h2>
+	
+	<form action="AddProduct" method = "POST">
+	
+		<table align="center">
+			
+			<tr>
+				<td><label>Name</label></td><td><input type="text" name="name"/></td>			
+			</tr>
+			
+			<tr>
+				<td><label>Price</label></td><td><input type="number" step=".01" name="price"/></td>			
+			</tr>
+			
+			<tr>
+				<td><label>Description</label></td><td><input type="text" name="description"/></td>			
+			</tr>
+			
+			<tr>
+				<td><label>Quantity</label></td><td><input type="number" name="quantity"/></td>			
+			</tr>
+			
+			<tr>
+				<td><input type="submit" value="REGISTER"> </td>
+			</tr>
+			
+		</table>		
+	</form>
+	
+	<form action = "updateproduct.html" >
+	<h1>Update an existing product</h1>
+	<input type="submit" value="update">
+	</form>
+
+</body>
+</html>
