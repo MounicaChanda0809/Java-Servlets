@@ -18,5 +18,7 @@
 			<attribute name="javadoc_location" value="https://docs.oracle.com/javaee/6/api/"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/mxc53820/git/JavaServlets/samplewebapp/WebContent/WEB-INF/lib/jstl-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mxc53820/Downloads/standard.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

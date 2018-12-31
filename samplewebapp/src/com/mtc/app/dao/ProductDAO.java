@@ -15,12 +15,34 @@ public class ProductDAO extends BaseDAO implements IProductDAO{
 	private static final String SELECT_QUERY = "select * from test.product";
 	private static final String INSERT_QUERY = "Insert into test.product(name,price,description,quantity) values(?,?,?,?)";
 	private static final String UPDATE_QUERY = "Update test.product SET name = ?, price = ?, description = ?, quantity = ? WHERE id = ?";
+	private static final String SELECT_QUERY_BY_ID = "select * from test.product where id = ?";
 
 	
 	@Override
 	public Product findById(int id) {
+		 Product product = null;
+		try(Connection connection = getConnection()){
+	    	
+	    	PreparedStatement ps = connection.prepareStatement(SELECT_QUERY_BY_ID);
+	    	ps.setInt(1, id );
+	    	ResultSet resultSet = ps.executeQuery();
+	    	
+	    	if(resultSet.next()) {
+	    		
+	    		product = new Product();
+	    		
+	    		product.setId(resultSet.getInt("id"));
+	    		product.setName(resultSet.getString("name"));
+				product.setPrice(resultSet.getFloat("price"));
+				product.setDescription(resultSet.getString("description"));
+				product.setQuantity(resultSet.getInt("quantity"));
+	    	}
+	    	
+	    }catch(Exception e) {
+	    	e.printStackTrace();
+	    }
 
-		return null;
+		return product;
 	}
 
 	@Override
